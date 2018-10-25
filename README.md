@@ -3,7 +3,8 @@ This repository contains information over the challenges I faced, to get video s
 
 
 Recently I was working on developing an embedded video server for streaming live video using the GStreamer framework. During the course of my work, I encountered a particular situation, where I wanted to try out if GStreamer could be used to stream video over the serial port interface, with the limitations of bandwidth and baud rate. I had 2 radio modules from Silicon labs that operated at 433Mhz and were exposed via the `/dev/tty` interfaces in the Linux file system. Since Linux file system exposes serial ports as device files, I came up with the idea of reading and writing the video frames just as reading and writing to a file. GStreamer provides means to read and write to files, in a simpler and easier way.
-Even though the radio modules, were close to each other, I could observe a lot of packet losses, which resulted in garbled video output. Here are a few tips I took to debug this issue: 
+Even though the radio modules, were close to each other, I could observe a lot of packet losses, which resulted in garbled video output. 
+After a lot of reading through and a generous help from some GStreamer experts, I could narrow down the issue and proceed. Here are a few tips I took to debug this issue: 
 
  
 
