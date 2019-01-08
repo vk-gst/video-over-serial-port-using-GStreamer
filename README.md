@@ -48,3 +48,5 @@ With the above steps, I found out that using the radio module, I was receiving o
 The next step, I performed was to use a NULL modem cable, and test the same thing. Voila! I could receive the complete data as it is and the `sha256sum` for the Tx and Rx files matched. 
 
 Now this same approach, can be used to debug some wireless modules that are exposed in Linux as serial port. This would give you an idea on how reliable the wireless module is, and an overview over the packet losses. 
+
+The next thing was to use the same concept on a custom in house built modem - which was also exposed as a `tty` interface in Linux framework. However the baud was much higher as compared to a primitive UART device. At about 2MBaud, I could get a decent video streaming working - albeit the latency was noticeable. But considering the limitations of the modem, I feel it still can be considered as an acceptable behaviour. I would experiment again with a new codec and low bitrate to see, if it improves the behaviour with regards to video latency.
